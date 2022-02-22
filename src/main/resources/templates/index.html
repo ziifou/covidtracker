@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>covid tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container ">
+    <h1>Statistiques Covid19 </h1>
+    <table class = "table table-dark .d-flex .mt-0.25 ">
+    <tr>
+        <th>pays</th>
+        <th>nombre total de cas</th>
+        <th>nombre de personnes entièrement vaccinées</th>
+        <th>nombre total de décès</th>
+    </tr>
+
+    <tr th:each="locationState : ${locationStates}">
+        <td th:text="${locationState.pays}"></td>
+        <td th:text="${locationState.nombreTotalDeCas}"></td>
+        <td th:text="${locationState.PersonnesEntierementVaccinees}"></td>
+        <td th:text="${locationState.nombreTotalDeDeces}"></td>
+    </tr>
+</table>
+</div>
+</body>
+
+</html>
